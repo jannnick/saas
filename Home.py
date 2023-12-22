@@ -8,6 +8,10 @@ import numpy as np
 import pandas as pd
 import openai
 
+# Check if the key exists, if not, initialize it
+if 'authenticator' not in st.session_state:
+    st.session_state.authenticator = None  # Or initialize it with an appropriate value
+
 # Set Streamlit page configuration
 st.set_page_config(page_title="SaaS", page_icon=":house", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
