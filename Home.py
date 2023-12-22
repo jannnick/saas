@@ -32,10 +32,8 @@ if 'verified' not in st.session_state:
 
 # Handle login if not authenticated and not verified
 if not st.session_state['authentication_status'] and not st.session_state['verified']:
-    authenticator_obj = st.session_state['authenticator'].login('Login', 'main')
-    if authenticator_obj is not None:
-        name, authentication_status, username = authenticator_obj.login('Login', 'main')
-
+    st.session_state['authenticator'].login('Login', 'main')
+    
 if 'summarized_text' not in st.session_state:
     st.session_state['summarized_text'] = ''
 if 'translation' not in st.session_state:
